@@ -1,0 +1,96 @@
+%\documentclass[a4paper,twoside,12pt]{book}
+\documentclass[twoside, openright, 11pt]{report}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx} %Para poder insertar las imagenes
+\usepackage{enumitem}%Para trabajar con los enumerates
+\usepackage[table,xcdraw]{xcolor}%Tablas autogeneradas con tablesgenerator
+\usepackage{csquotes}%Para poder entre comillas los textos
+\usepackage{wrapfig}%Imagenes junto al texto
+%\usepackage{url}
+%\usepackage{blindtext}
+
+\setquotestyle{english}%Para que el quote me lo haga con `` y no con <<
+\begin{document}
+
+\begin{titlepage}
+
+\newlength{\centeroffset}
+\setlength{\centeroffset}{-0.5\oddsidemargin}
+\addtolength{\centeroffset}{0.5\evensidemargin}
+\thispagestyle{empty}
+
+\noindent\hspace*{\centeroffset}\begin{minipage}{\textwidth}
+
+\centering
+\includegraphics[width=0.9\textwidth]{imagenes/logo_ugr}\\[1cm]
+
+\textsc{ \Large TRABAJO FIN DE GRADO\\[0.2cm]}
+\textsc{ GRADO DE INGENIERÍA EN INFORMÁTICA}\\[1cm]
+% Upper part of the page
+%
+% Title
+{\huge\bfseries Desarrollo de sistema basado en geolocalización dirigido a personas con Alzheimer y su entorno\\
+}
+\noindent\rule[-1ex]{\textwidth}{3pt}\\[3.5ex]
+{\large\bfseries Desarrollo de Software}
+\end{minipage}
+
+\vspace{0.3cm}
+\noindent\hspace*{\centeroffset}\begin{minipage}{\textwidth}
+\centering
+
+\textbf{Autor}\\ {ELENA CHAVES HERNÁNDEZ}\\[2.5ex]
+\textbf{Directores}\\
+{CARLOS CANO GUTIÉRREZ}\\
+{CARLOS RODRÍGUEZ DOMÍNGUEZ}\\[2cm]
+\includegraphics[width=0.3\textwidth]{imagenes/logo-ceuta.jpg}\\[0.1cm]
+%\includegraphics[width=0.15\textwidth]{imagenes/feetce.jpg}\\[0.1cm] %otra imagen que tenía por ahí del logo de la facultad donde se ve mejor, pero no queda igual de bien
+\textsc{Facultad de Educación, Economía y Tecnología de Ceuta}\\
+\textsc{---}\\
+Granada, 15 de Junio de 2021
+\end{minipage}
+\end{titlepage}
+\let\cleardoublepage\clearpage
+
+\chapter*{}
+\begin{flushright}
+\textit{Dedicado a \\
+...}
+\end{flushright}
+\thispagestyle{empty}
+
+\input{capitulos/resumenes/resumen} %incluimos archivo que contiene la sección del resumen
+
+\input{capitulos/resumenes/abstract}%incluimos el archivo que contiene el resumen en inglés
+
+\tableofcontents % indice de contenidos
+
+\cleardoublepage
+\addcontentsline{toc}{chapter}{Lista de figuras} % para que aparezca en el indice de contenidos
+\listoffigures % indice de figuras
+
+\cleardoublepage
+\addcontentsline{toc}{chapter}{Lista de tablas} % para que aparezca en el indice de contenidos
+\listoftables % indice de tablas
+
+\input{capitulos/introduccion/introduccion}%incluimos el archivo donde se encuentra el capítulo de la introducción por puntos
+
+\input{capitulos/arte/estado del arte}%incluimos el archivo donde se encuentra el capítulo de estado del arte por puntos
+
+\input{capitulos/diseno/diseno y descripcion del sistema}%incluimos el archivo donde se encuentra el capítulo de diseño y descripción del sistema por puntos
+
+\input{capitulos/prototipos/prototipos y desarrollo}%incluimos el archivo donde se encuentra el capítulo de prototipos y desarrollo por puntos
+
+\input{capitulos/conclusiones/espanol/conclusiones y mejoras futuras}%incluimos el archivo donde se encuentra el capítulo de conclusiones finales en español
+
+\input{capitulos/conclusiones/ingles/conclusions and future works}%incluimos el archivo donde se encuentra el capítulo de conclusiones finales en español
+
+%usar bibtex (pdflatex, bibtex, pdflatex, pdflatex)
+\cleardoublepage
+%\cite{Stavropoulos2017} %Prueba de funcionamiento de la bibliografia
+\addcontentsline{toc}{chapter}{Bibliografía}
+\bibliographystyle{acm} % estilo de la bibliografía.
+\bibliography{citas.bib} % citas.bib es el fichero donde está salvada la bibliografía.
+
+\end{document}
